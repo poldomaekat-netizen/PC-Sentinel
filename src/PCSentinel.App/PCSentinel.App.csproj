@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><UseWPF>true</UseWPF><UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>PCSentinel</AssemblyName><ApplicationManifest>app.manifest</ApplicationManifest>
+    <DebugType>embedded</DebugType><PublishTrimmed>false</PublishTrimmed>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../PCSentinel.Core/PCSentinel.Core.csproj" />
+    <ProjectReference Include="../PCSentinel.Collectors/PCSentinel.Collectors.csproj" />
+    <ProjectReference Include="../PCSentinel.Network/PCSentinel.Network.csproj" />
+    <ProjectReference Include="../PCSentinel.Storage/PCSentinel.Storage.csproj" />
+    <ProjectReference Include="../PCSentinel.Diagnostics/PCSentinel.Diagnostics.csproj" />
+  </ItemGroup>
+  <ItemGroup><Using Remove="System.Windows.Forms" /><Using Remove="System.Drawing" /></ItemGroup>
+</Project>

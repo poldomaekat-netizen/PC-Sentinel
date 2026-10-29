@@ -1,0 +1,36 @@
+name: Windows installer build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.402'
+      - name: Fetch verified installer dependencies
+        shell: pwsh
+        run: ./scripts/fetch-deps.ps1 -InstallInno
+      - name: Test, publish folder, compile installer
+        shell: pwsh
+        run: ./scripts/build-installer.ps1
+      - name: Package matching source
+        shell: pwsh
+        run: ./scripts/package-source.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PCSentinel-Setup-win-x64
+          if-no-files-found: error
+          path: |
+            installer/Output/PCSentinel-*-Setup.exe
+            installer/Output/PCSentinel-*-Setup.exe.sha256
+            installer/Output/BUILD-MANIFEST.json
+            installer/Output/PCSentinel-*-Source.zip
+            installer/Output/PCSentinel-*-Source.zip.sha256
+            ${{ runner.temp }}/PCSentinel-Build/publish/v*-Folder/SHA256SUMS.txt
+            ${{ runner.temp }}/PCSentinel-Build/artifacts/tests/*.trx

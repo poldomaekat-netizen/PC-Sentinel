@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><AssemblyName>PCSentinel.SensorService</AssemblyName><PublishSingleFile>false</PublishSingleFile><IncludeNativeLibrariesForSelfExtract>false</IncludeNativeLibrariesForSelfExtract><ApplicationManifest>app.manifest</ApplicationManifest></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../PCSentinel.Collectors/PCSentinel.Collectors.csproj" /></ItemGroup>
+</Project>

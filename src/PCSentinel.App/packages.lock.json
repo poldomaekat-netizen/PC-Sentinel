@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0-windows7.0": {
+      "Microsoft.Data.Sqlite.Core": {
+        "type": "Transitive",
+        "resolved": "10.0.13",
+        "contentHash": "Gge8XsSCOwcbkbdmt2UDAe6kIv9Q0vA6yb3wsTStjjexaMFLTWfc/1gH4kbhJ+zWiXRTRA4lG2sOQNVfir204w==",
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.13"
+        }
+      },
+      "SQLitePCLRaw.core": {
+        "type": "Transitive",
+        "resolved": "2.1.13",
+        "contentHash": "2joofoinuHBFs0nMX3nKuXgxpXryRkCOdM2Ua6HBqQLLy6IW+5f28ZI+HAvMyF8vG7XfNz/lwfBfE6V4juru8Q=="
+      },
+      "SQLitePCLRaw.provider.winsqlite3": {
+        "type": "Transitive",
+        "resolved": "2.1.11",
+        "contentHash": "UpH9v68yuLAN3nvXB96s6GE3/tQhG1WnXenNJL/HulgfJAQ5S6ZT6BUy/sDFo5WpqaS0npBbW1z6szWlu6a4Xg==",
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.11"
+        }
+      },
+      "System.Management": {
+        "type": "Transitive",
+        "resolved": "10.0.13",
+        "contentHash": "cL8qiJmJtlSIcAoZH4s07VTxTdddvEP12MFeM+KBZagn4CuD/0SFQsmKn5g9MLfiSrYjdAxIwOTO0kATY9A0UA=="
+      },
+      "pcsentinel.collectors": {
+        "type": "Project",
+        "dependencies": {
+          "PCSentinel.Core": "[0.3.2, )",
+          "System.Management": "[10.0.13, )"
+        }
+      },
+      "pcsentinel.core": {
+        "type": "Project"
+      },
+      "pcsentinel.diagnostics": {
+        "type": "Project",
+        "dependencies": {
+          "PCSentinel.Core": "[0.3.2, )"
+        }
+      },
+      "pcsentinel.network": {
+        "type": "Project",
+        "dependencies": {
+          "PCSentinel.Core": "[0.3.2, )"
+        }
+      },
+      "pcsentinel.storage": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "[10.0.13, )",
+          "PCSentinel.Core": "[0.3.2, )",
+          "SQLitePCLRaw.provider.winsqlite3": "[2.1.11, )"
+        }
+      }
+    }
+  }
+}

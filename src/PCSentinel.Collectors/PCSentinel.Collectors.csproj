@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup><ProjectReference Include="../PCSentinel.Core/PCSentinel.Core.csproj" />
+    <PackageReference Include="System.Management" Version="10.0.13" />
+  </ItemGroup>
+  <ItemGroup><EmbeddedResource Include="SensorModules\*.bin" LogicalName="PCSentinel.SensorModules.%(Filename)%(Extension)" /></ItemGroup>
+</Project>
